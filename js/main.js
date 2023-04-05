@@ -1,6 +1,7 @@
 let tableau = [];
 let rangees = 15;
 let colonnes = 25;
+let sante = 40;
 const donjonDiv = document.querySelector(".donjon");
 
 for (let ran = 0; ran < rangees; ran++) {
@@ -150,4 +151,8 @@ function verifierDeplacement(direction){
         return false;
     }
     return true;
+}
+
+function abaisserSante(numero){
+
 }
