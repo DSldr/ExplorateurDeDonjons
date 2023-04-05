@@ -1,0 +1,67 @@
+.principale{
+    display: flex;
+    height: 95vh;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+
+.donjon{
+    display: flex;
+    margin: 30px auto 10px;
+    width: 876px;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    border: 2px solid lightgrey;
+}
+
+.tuile{
+    width:35px;
+    height:40px;
+    line-height: 40px;
+    text-align: center;
+    
+}
+
+.controlleurs{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.direction{
+    width: 250px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+#boutonMonter{
+    width:100px;
+    margin:4px 75px;
+}
+
+#boutonGauche, #boutonDroite{
+    width:110px;
+    margin: 0px 2px;
+}
+
+#boutonDescendre{
+    width:100px;
+    margin:4px 75px;
+}
+
+.controlleurs > div > button{
+    padding: 8px;
+}
+
+.menu{
+    justify-content: center;
+    align-self: center;
+    margin: 0px 100px;
+}
+
+#boutonSortir{
+    width:100px;
+}
