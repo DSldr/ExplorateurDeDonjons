@@ -72,7 +72,7 @@ function ActualiserDonjon(){
 
 function DeplacerTravailleur(direction)
 {
-    if (verifierDeplacement(direction) == false){
+    if (deplacementValide(direction) == false){
         alert("Mouvement invalide!")
         return;
     }
@@ -113,7 +113,7 @@ function DeplacerTravailleur(direction)
     ActualiserDonjon();
 }
 
-function verifierDeplacement(direction){
+function deplacementValide(direction){
     if ((rangeeMineur - 1 < 0) && (direction == 'haut')){
         return false;
     }
