@@ -111,17 +111,20 @@ button:active{
 }
 
 .menu{
+    display:flex;
+    flex-direction: column;
     justify-content: center;
     align-self: center;
     margin: 0px 50px;
 }
 
-#boutonSortir{
+#boutonSortir, #boutonRegles{
     font-size: medium;
     line-height: 100%;
     padding: 0px;
     width:100px;
     height: 35px;
+    margin:5px;
 }
 
 .progress {
