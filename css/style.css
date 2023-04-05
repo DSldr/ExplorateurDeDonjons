@@ -14,6 +14,7 @@
     align-items: center;
     flex-wrap: wrap;
     border: 2px solid lightgrey;
+    padding: 5px;
 }
 
 .tuile{
@@ -22,6 +23,21 @@
     line-height: 40px;
     text-align: center;
     
+}
+
+.piege > img, .tresor > img{
+    width: 90%;
+    height: 90%;
+}
+
+.tresor > img{
+    width: 80%;
+    height: 80%;
+}
+
+.mineur > img{
+    width: 100%;
+    height: 100%;
 }
 
 .controlleurs{
