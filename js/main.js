@@ -37,32 +37,33 @@ function RemplirTableau(){
 }
 
 function ActualiserDonjon(){
-    
+    let htmlString = "";
     donjonDiv.innerHTML = "";
     for (let ran = 0; ran < rangees; ran++) {
         for (let col = 0; col < colonnes; col++) {
             let valeur = tableau[ran][col];
-            let htmlString;
+            
             if((ran == rangeeMineur) && (col == colonneMineur)) {
-                donjonDiv.innerHTML = donjonDiv.innerHTML + '<div class="tuile mineur"><img src="img/miner.png"></div>'
+                htmlString += '<div class="tuile mineur"><img src="img/miner.png"></div>'
                 tableau[rangeeMineur][colonneMineur] = 2;
                 continue;
             }
             if (valeur == 0){
-                donjonDiv.innerHTML = donjonDiv.innerHTML + '<div class="tuile piege"><img src="img/piege.png"></div>'
+                htmlString += '<div class="tuile piege"><img src="img/piege.png"></div>'
                 continue;
             } 
             if(valeur == 1) {
-                donjonDiv.innerHTML = donjonDiv.innerHTML + '<div class="tuile tresor"><img src="img/treasure.png"></div>'
+                htmlString += '<div class="tuile tresor"><img src="img/treasure.png"></div>'
                 continue;
             }
             if(valeur == 2) {
-                donjonDiv.innerHTML = donjonDiv.innerHTML + '<div class="tuile blanc"></div>'
+                htmlString += '<div class="tuile blanc"></div>'
                 continue;
             }
-
+            
         }
     }
+    donjonDiv.innerHTML = htmlString;
 }
 
 function DeplacerTravailleur(direction)

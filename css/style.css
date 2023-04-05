@@ -8,7 +8,7 @@
 
 .donjon{
     display: flex;
-    margin: 30px auto 10px;
+    margin: 20px auto 10px;
     width: 876px;
     justify-content: center;
     align-items: center;
@@ -44,6 +44,7 @@
     display: flex;
     flex-direction: row;
     justify-content: center;
+    margin: 20px 0px 0px 0px;
 }
 
 .direction{
@@ -75,9 +76,49 @@
 .menu{
     justify-content: center;
     align-self: center;
-    margin: 0px 100px;
+    margin: 0px 50px;
 }
 
 #boutonSortir{
     width:100px;
+}
+
+#sante{
+    width: 350px;
+    height: 25px;
+    accent-color: crimson;
+    margin:  0px 5px 0px 5px;
+}
+
+.progress {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    flex-direction: row;
+}
+
+.progress > div {
+    margin: 2px 0px;
+    font-size: 1em;
+    font-weight: bold;
+    font-family: helvetica, sans-serif;
+    line-height: 100%;
+    text-align: center;
+}
+
+.status{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    flex-direction: row;
+}
+
+#score{
+    width: 100px;
+    font-weight: bold;
+    font-size: 1em;
+    font-family: helvetica, sans-serif;
+    margin: 0px 15px;
 }
