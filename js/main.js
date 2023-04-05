@@ -1,8 +1,12 @@
 let tableau = [];
 let rangees = 15;
 let colonnes = 25;
-let sante = 40;
+var energie = 40;
+var points = 0;
 const donjonDiv = document.querySelector(".donjon");
+const divScore = document.getElementById("score")
+const divFinalScore = document.getElementById("finalScore")
+const divEnergie = document.getElementById("progressfill");
 
 for (let ran = 0; ran < rangees; ran++) {
     tableau[ran] = [];
@@ -79,13 +83,14 @@ let valeur;
         case 'haut':
             valeur = tableau[rangeeMineur -1][colonneMineur];
             if ((valeur == 0)){
-                
+                abaisserEnergie()
+                modifierPoints(-50)
             }
             if ((valeur == 1)){
-                
+                modifierPoints(1000)
             }
             if ((valeur == 2)){
-                
+                modifierPoints(-10)
             }
             rangeeMineur--;
             tableau[rangeeMineur][colonneMineur] = 2;
@@ -93,13 +98,14 @@ let valeur;
         case 'bas':
             valeur = tableau[rangeeMineur +1][colonneMineur];
             if ((valeur == 0)){
-                
+                modifierPoints(-50)
+                abaisserEnergie()
             }
             if ((valeur == 1)){
-                
+                modifierPoints(1000)
             }
             if ((valeur == 2)){
-                
+                modifierPoints(-10)
             }
             rangeeMineur++;
             tableau[rangeeMineur][colonneMineur] = 2;
@@ -107,13 +113,14 @@ let valeur;
         case 'gauche':
             valeur = tableau[rangeeMineur][colonneMineur - 1];
             if ((valeur == 0)){
-                
+                modifierPoints(-50)
+                abaisserEnergie()
             }
             if ((valeur == 1)){
-                
+                modifierPoints(1000)
             }
             if ((valeur == 2)){
-                
+                modifierPoints(-10)
             }
             colonneMineur--;
             tableau[rangeeMineur][colonneMineur] = 2;
@@ -121,13 +128,14 @@ let valeur;
         case 'droite':
             valeur = tableau[rangeeMineur][colonneMineur + 1];
             if ((valeur == 0)){
-                
+                modifierPoints(-50)
+                abaisserEnergie()
             }
             if ((valeur == 1)){
-                
+                modifierPoints(1000)
             }
             if ((valeur == 2)){
-                
+                modifierPoints(-10)
             }
             colonneMineur++;
             tableau[rangeeMineur][colonneMineur] = 2;
@@ -153,6 +161,49 @@ function verifierDeplacement(direction){
     return true;
 }
 
-function abaisserSante(numero){
+function abaisserEnergie(){
+    energie = energie - 1;
+    divEnergie.innerText = energie;
+    divEnergie.style.width = energie * (100 / 40) +'%';
+    if (energie <= 0){
+        divFinalScore.innerText = "Score : " + points;
+        activerOverlay();
+    }
+}
 
+function modifierPoints(pointsObtenus){
+    let resultat = points + pointsObtenus;
+    if ((resultat < 0)){
+        points = 0;
+    }else{
+        points = resultat;
+    }
+    
+    divScore.innerText = "Score : " + points;
+
+}
+
+
+
+function activerOverlay() {
+    document.getElementById("overlay").style.display = "block";
+  }
+  
+function deactiverOverlay() {
+    document.getElementById("overlay").style.display = "none";
+    redemarrer();
+}
+
+function redemarrer(){
+    energie = 40;
+    points = 0;
+    rangeeMineur = 7;
+    colonneMineur = 12;
+    divScore.innerText = "Score : " + points;
+    divFinalScore.innerText = "Score : " + points;
+    divEnergie.innerText = energie;
+    divEnergie.style.width = '100%';
+    RemplirTableau();
+    ActualiserDonjon();
+    
 }

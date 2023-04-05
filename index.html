@@ -10,14 +10,14 @@
 
 <body>
     <div class="principale">
-
+        <h1>Explorateur de Donjons</h2>
         <div class="donjon">
             
         </div>
         <div class="status">
             <div class="progress">
-                <div>Vie restante :</div>
-                <progress id="sante" value="40" max="40">40</progress>
+                <div>Energie :</div>
+                <div id="progress"><div id="progressfill">40</div></div>
             </div>
             <div id="score">Score : 0</div> 
         </div>
@@ -34,6 +34,10 @@
             </div>
         </div>
 
+    </div>
+    <div id="overlay">
+        <div id="gameover"><h1>GAME OVER!</h1><h2 id="finalScore">Score : 0</h2><h5 onclick="deactiverOverlay()">Cliquez ici pour redemarrer!</h6>
+        </div>
     </div>
     <script type="text/javascript" src="js/main.js"></script>
 </body>
