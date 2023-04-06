@@ -26,7 +26,9 @@ document.getElementById("boutonMonter").addEventListener("click", (e) =>(Deplace
 document.getElementById("boutonGauche").addEventListener("click", (e) =>(DeplacerTravailleur('gauche')));
 document.getElementById("boutonDroite").addEventListener("click", (e) =>(DeplacerTravailleur('droite')));
 document.getElementById("boutonDescendre").addEventListener("click", (e) =>(DeplacerTravailleur('bas')));
-
+document.getElementById("boutonRegles").addEventListener("click", (e) =>(activerOverlay('overlayRegles')));
+document.getElementById("boutonOptions").addEventListener("click", (e) =>(activerOverlay('overlayOptions')));
+document.getElementById("boutonSortir").addEventListener("click", (e) =>(redemarrer));
 
 
 function RemplirTableau(){
@@ -167,14 +169,6 @@ function deplacementValide(direction){
             }
             break;
     }
-
-
-
-
-
-
-
-
     return true;
 }
 
@@ -184,7 +178,7 @@ function abaisserEnergie(){
     divEnergie.style.width = energie * (100 / 40) +'%';
     if (energie <= 0){
         divFinalScore.innerText = "Score : " + points;
-        activerOverlay();
+        activerOverlay("overlayGameover");
     }
 }
 
@@ -198,13 +192,25 @@ function modifierPoints(pointsObtenus){
     divScore.innerText = "Score : " + points;
 }
 
-function activerOverlay() {
-    document.getElementById("overlay").style.display = "block";
-  }
+function activerOverlay(overlayName) {
+    if (overlayName == "overlayRegles"){
+        document.getElementById("overlayRegles").style.display = "block";
+    }
+    if (overlayName == "overlayOptions"){
+        document.getElementById("overlayOptions").style.display = "block";
+    }
+    if (overlayName == "overlayGameover"){
+        document.getElementById("overlayGameover").style.display = "block";
+    }
+}
   
 function deactiverOverlay() {
-    document.getElementById("overlay").style.display = "none";
-    redemarrer();
+    document.getElementById("overlayRegles").style.display = "none";
+    document.getElementById("overlayOptions").style.display = "none";
+    document.getElementById("overlayGameover").style.display = "none";
+    if (energie <= 0){
+        redemarrer();
+    }
 }
 
 function redemarrer(){

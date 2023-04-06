@@ -38,8 +38,45 @@
         </div>
 
     </div>
-    <div id="overlay">
-        <div id="gameover"><h1>GAME OVER!</h1><h2 id="finalScore">Score : 0</h2><h5 onclick="deactiverOverlay()">Redémarrer!</h6>
+    <div id="overlayRegles">
+        <div id="regles"><h1>Règles</h1>
+            <ul>
+                <li>Le jeux termine quand vous n'avez plus d'energie restante.</li>
+                <li>Le but est d'obtenir le plus de points avant que vous perdez tout l'energie.</li>
+                <li>Si vous marchez sur un trésor, vous le ramassez et gagnez 1000 points de score</li>
+                <li>Si vous marchez sur un diamant, vous le ramassez et gagnez 4000 points de score</li>
+                <li>Quand vous marchez sur un piège, vous perdez 50 points de score et 1 point d'energie.</li>
+                <li>Vous ne perderez pas de points si vous marchez sur des tuiles vides, sur le trésor ou des diamants.</li>
+                <li>Vous ne pouvez pas sortir de la grille ou marchez sur les roches gris foncé.</li>
+            </ul>
+        
+        <h5 class="overlayClosing" onclick="deactiverOverlay()">Fermer</h5>
+        </div>
+    </div>
+    <div id="overlayOptions">
+        <div id="options"><h1>Options</h1>
+            <div>
+                <div>
+                <input type="checkbox" id="check1" name="check1" value="Bike">
+                <label for="vehicle1">Activer les diamants</label>
+                </div>
+                <div>
+                <input type="checkbox" id="check2" name="check2" value="Car">
+                <label for="vehicle2">Activer les roches gris foncé</label>
+                </div>
+                <div>
+                <input type="checkbox" id="check2" name="check2" value="Boat">
+                <label for="vehicle3">Blank</label>
+                </div>
+            </div>
+                <input type="submit" class="overlayClosing" value="Sauvegarder" onclick="deactiverOverlay()">
+        </div>
+    </div>
+    <div id="overlayGameover">
+        <div id="gameover"><h1>GAME OVER!</h1><h2 id="finalScore">Score : 0
+
+        </h2>
+        <h5 class="overlayClosing" onclick="deactiverOverlay()">Redémarrer!</h5>
         </div>
     </div>
     <script type="text/javascript" src="js/main.js"></script>

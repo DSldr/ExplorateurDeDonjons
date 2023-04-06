@@ -188,7 +188,7 @@ button:active{
     height: 100%;
 }
 
-#overlay {
+#overlayGameover, #overlayRegles, #overlayOptions {
     position: fixed; /* Sit on top of the page content */
     display: none; /* Hidden by default */
     width: 100%; /* Full width (cover the whole page) */
@@ -217,24 +217,74 @@ button:active{
     color: white;
   }
 
-  #gameover > *{
+  #regles{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 200px auto;
+    width: 700px;
+    height: 500px;
+    border: 2px solid rgb(0, 96, 221);
+    background-color: rgb(90, 145, 218);
+    box-shadow: 2px 2px 15px rgb(0, 96, 221);
+    font-size: large;
+    color: white;
+  }
+
+  #regles > ul > *{
+    font-family: Helvetica, sans-serif;
+    text-shadow: 1px 1px 3px rgb(42, 47, 53);
+    font-size: 0.9em;
+    padding:3px;
+  }
+
+  #options{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 200px auto;
+    width: 400px;
+    height: 300px;
+    border: 2px solid rgb(0, 96, 221);
+    background-color: rgb(90, 145, 218);
+    box-shadow: 2px 2px 15px rgb(0, 96, 221);
+    font-size: large;
+    color: white;
+  }
+
+  #options > div {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 5px;
+  }
+
+  #options > div > div{
+    padding: 8px;
+  }
+
+  #gameover > *,   #regles > *,   #options > *{
     font-family: Helvetica, sans-serif;
     text-shadow: 1px 1px 3px rgb(42, 47, 53);
     margin: 10px;
   }
 
-  h5{
+  .overlayClosing {
     background-color: rgb(0, 96, 221);
-    padding: 5px 10px;
+    padding: 5px 0px;
     border: 2px solid rgb(0, 64, 146);
-    width: 90px;
+    width: 115px;
     text-align: center;
+    font-size: large;
+    color: white;
   }
 
-  h5:hover{
+  .overlayClosing:hover{
     background-color: rgb(0, 77, 177);
-    padding: 5px 10px;
-    width: 95px;
+    width: 120px;
     box-shadow: 0px 0px 10px rgb(3, 97, 221);
   }
   
