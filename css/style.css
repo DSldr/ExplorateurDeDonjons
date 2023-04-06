@@ -43,12 +43,12 @@ body > div > h1{
     
 }
 
-.piege > img, .tresor > img{
+.piege > img{
     width: 90%;
     height: 90%;
 }
 
-.tresor > img{
+.tresor > img, .obstacle > img{
     width: 80%;
     height: 80%;
 }
@@ -85,7 +85,7 @@ button:active{
 }
 
 .direction{
-    width: 360px;
+    width: 150px;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -93,7 +93,7 @@ button:active{
 
 #boutonMonter{
     font-family: Wingdings;
-    margin:4px 150px;
+    margin:4px 40px;
 }
 
 #boutonGauche, #boutonDroite{
@@ -118,13 +118,13 @@ button:active{
     margin: 0px 50px;
 }
 
-#boutonSortir, #boutonRegles{
+#boutonSortir, #boutonRegles, #boutonOptions{
     font-size: medium;
     line-height: 100%;
     padding: 0px;
     width:100px;
-    height: 35px;
-    margin:5px;
+    height: 25px;
+    margin:3px;
 }
 
 .progress {
@@ -147,18 +147,18 @@ button:active{
 .status{
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
     font-weight: bold;
-    flex-direction: row;
+    flex-direction: column;
     color:  rgb(0, 96, 221);
 }
 
 #score{
-    width: 150px;
+    width: 140px;
     font-weight: bold;
     font-size: 1em;
     font-family: helvetica, sans-serif;
-    margin: 0px 15px;
+    margin: 8px 0px 0px 0px;
 }
 
 #progress {

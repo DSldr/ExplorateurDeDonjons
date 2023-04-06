@@ -5,6 +5,7 @@ var energie = 40;
 var points = 0;
 let rangeeMineur = 7;
 let colonneMineur = 12;
+let ajouterObstacles = true;
 const donjonDiv = document.querySelector(".donjon");
 const divScore = document.getElementById("score")
 const divFinalScore = document.getElementById("finalScore")
@@ -28,14 +29,30 @@ document.getElementById("boutonDescendre").addEventListener("click", (e) =>(Depl
 
 
 function RemplirTableau(){
+
+
     for (let ran = 0; ran < rangees; ran++) {
         for (let col = 0; col < colonnes; col++) {
             let nbAuHasard = Math.floor(Math.random() * 101);
-            if (nbAuHasard < 90){
-                tableau[ran][col] = 0;
-            }else{
-                tableau[ran][col] = 1;
+
+            if(ajouterObstacles == true){
+                if (nbAuHasard > 90){
+                    tableau[ran][col] = 1;
+                }
+                else if((nbAuHasard >= 80) && (nbAuHasard <= 90)){
+                    tableau[ran][col] = 9;
+                }else{
+                    tableau[ran][col] = 0;
+                }
             }
+            else{
+                if (nbAuHasard > 90){
+                    tableau[ran][col] = 1;
+                }else{
+                    tableau[ran][col] = 0;
+                }
+            }
+
         }
     }
 }
@@ -64,6 +81,10 @@ function ActualiserDonjon(){
                 htmlString += '<div class="tuile blanc"></div>'
                 continue;
             }
+            if(valeur == 9) {
+                htmlString += '<div class="tuile obstacle"><img src="img/obstacle.png"></div>'
+                continue;
+            }
             
         }
     }
@@ -73,7 +94,6 @@ function ActualiserDonjon(){
 function DeplacerTravailleur(direction)
 {
     if (deplacementValide(direction) == false){
-        alert("Mouvement invalide!")
         return;
     }
     let valeur;
@@ -114,18 +134,37 @@ function DeplacerTravailleur(direction)
 }
 
 function deplacementValide(direction){
-    if ((rangeeMineur - 1 < 0) && (direction == 'haut')){
-        return false;
+
+    switch(direction) {
+        case 'haut':
+            if ((rangeeMineur - 1 < 0) || (tableau[rangeeMineur-1][colonneMineur] == 9)){
+                return false;
+            }
+            break;
+        case 'bas':
+            if ((rangeeMineur + 1 > 14) || (tableau[rangeeMineur+1][colonneMineur] == 9)){
+                return false;
+            }
+            break;
+        case 'gauche':
+            if ((colonneMineur - 1 < 0) || (tableau[rangeeMineur][colonneMineur-1] == 9)){
+                return false;
+            }
+            break;
+        case 'droite':
+            if ((colonneMineur + 1 > 24) || (tableau[rangeeMineur][colonneMineur+1] == 9)){
+                return false;
+            }
+            break;
     }
-    if ((direction == 'bas') && (rangeeMineur + 1 > 14)){
-        return false;
-    }
-    if ((colonneMineur - 1 < 0) && (direction == 'gauche')){
-        return false;
-    }
-    if ((direction == 'droite') && (colonneMineur + 1 > 24)){
-        return false;
-    }
+
+
+
+
+
+
+
+
     return true;
 }
 
@@ -148,8 +187,6 @@ function modifierPoints(pointsObtenus){
     }
     divScore.innerText = "Score : " + points;
 }
-
-
 
 function activerOverlay() {
     document.getElementById("overlay").style.display = "block";
