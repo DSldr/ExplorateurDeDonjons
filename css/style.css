@@ -1,11 +1,16 @@
 html, body {
     margin:0;
     padding:0;
-    min-height: 100vh;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center; 
+    -webkit-background-size: cover;
+    background-size: cover;
 }
 
 body {
     background-image: linear-gradient(to bottom right, rgb(248, 248, 248), rgb(117, 174, 248));
+    
 }
 
 .principale{
