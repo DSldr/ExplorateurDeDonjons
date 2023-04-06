@@ -48,7 +48,7 @@ body > div > h1{
     height: 90%;
 }
 
-.tresor > img, .obstacle > img{
+.tresor > img, .obstacle > img, .diamant > img{
     width: 80%;
     height: 80%;
 }

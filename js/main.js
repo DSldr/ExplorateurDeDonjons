@@ -5,7 +5,8 @@ var energie = 40;
 var points = 0;
 let rangeeMineur = 7;
 let colonneMineur = 12;
-let ajouterObstacles = true;
+let activerObstacles = true;
+let activerDiamants = true;
 const donjonDiv = document.querySelector(".donjon");
 const divScore = document.getElementById("score")
 const divFinalScore = document.getElementById("finalScore")
@@ -35,7 +36,7 @@ function RemplirTableau(){
         for (let col = 0; col < colonnes; col++) {
             let nbAuHasard = Math.floor(Math.random() * 101);
 
-            if(ajouterObstacles == true){
+            if(activerObstacles == true){
                 if (nbAuHasard > 90){
                     tableau[ran][col] = 1;
                 }
@@ -55,6 +56,8 @@ function RemplirTableau(){
 
         }
     }
+    ajouterDiamants();
+
 }
 
 function ActualiserDonjon(){
@@ -79,6 +82,10 @@ function ActualiserDonjon(){
             }
             if(valeur == 2) {
                 htmlString += '<div class="tuile blanc"></div>'
+                continue;
+            }
+            if(valeur == 8) {
+                htmlString += '<div class="tuile diamant"><img src="img/diamant.png"></div>'
                 continue;
             }
             if(valeur == 9) {
@@ -129,6 +136,9 @@ function DeplacerTravailleur(direction)
     }
     if ((valeur == 2)){
         modifierPoints(-10)
+    }
+    if ((valeur == 8)){
+        modifierPoints(4000)
     }
     ActualiserDonjon();
 }
@@ -208,4 +218,23 @@ function redemarrer(){
     divEnergie.style.width = '100%';
     RemplirTableau();
     ActualiserDonjon();
+}
+
+function ajouterDiamants(){
+    if (activerDiamants == true){
+        for(let i = 0; i < 2; i++)
+        {
+            let rangee = Math.floor(Math.random() * 15)
+            let colonne = Math.floor(Math.random() * 25)
+            if((rangee == 7) && (colonne == 12)){
+                rangee = Math.floor(Math.random() * 15)
+                colonne = Math.floor(Math.random() * 25)
+                i--;
+                continue;
+            }
+            tableau[rangee][colonne] = 8;
+        } 
+        
+
+    }
 }
