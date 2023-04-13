@@ -1,290 +1,301 @@
-html, body {
-    margin:0;
-    padding:0;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-position: center; 
-    -webkit-background-size: cover;
-    background-size: cover;
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  -webkit-background-size: cover;
+  background-size: cover;
 }
 
 body {
-    background-image: linear-gradient(to bottom right, rgb(248, 248, 248), rgb(117, 174, 248));
-    
+  background-image: linear-gradient(
+    to bottom right,
+    rgb(248, 248, 248),
+    rgb(117, 174, 248)
+  );
 }
 
-.principale{
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-    flex-direction: column;
+.principale {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  flex-direction: column;
 }
 
-body > div > h1{
-    margin: 15px 0px 0px 0px;
-    color: rgb(0, 96, 221);
-    text-shadow: 2px 2px 3px rgb(110, 173, 255);
-    font-family: Helvetica, sans-serif;
+body > div > h1 {
+  margin: 15px 0px 0px 0px;
+  color: rgb(0, 96, 221);
+  text-shadow: 2px 2px 3px rgb(110, 173, 255);
+  font-family: Helvetica, sans-serif;
 }
 
-.donjon{
-    display: flex;
-    margin: 10px auto;
-    width: 1000px;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    border: 3px solid rgb(110, 173, 255);
-    padding: 5px;
-    background-color: rgb(240, 239, 239);
-    box-shadow: 4px 4px 10px rgb(0, 96, 221);
+.donjon {
+  display: flex;
+  margin: 10px auto;
+  width: 1000px;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  border: 3px solid rgb(110, 173, 255);
+  padding: 5px;
+  background-color: rgb(240, 239, 239);
+  box-shadow: 4px 4px 10px rgb(0, 96, 221);
 }
 
-.tuile{
-    width: 40px;
-    height: 45px;
-    line-height: 40px;
-    text-align: center;
-    
+.tuile {
+  width: 40px;
+  height: 45px;
+  line-height: 40px;
+  text-align: center;
 }
 
-.piege > img{
-    width: 90%;
-    height: 90%;
+.piege > img {
+  width: 90%;
+  height: 90%;
 }
 
-.tresor > img, .obstacle > img, .diamant > img{
-    width: 80%;
-    height: 80%;
+.tresor > img,
+.obstacle > img,
+.diamant > img {
+  width: 80%;
+  height: 80%;
 }
 
-.mineur > img{
-    width: 100%;
-    height: 100%;
+.mineur > img {
+  width: 100%;
+  height: 100%;
 }
 
-.controlleurs{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    margin: 5px 0px 0px 0px;
+.controlleurs {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin: 5px 0px 0px 0px;
 }
 
-button{
-    border: 2px solid rgb(110, 173, 255);
-    background-color: white;
-    color:  rgb(0, 96, 221);
-    font-weight: bold;    
-    font-size: large;
-    width: 45px;;
-    height: 45px;
-    box-shadow: 4px 4px 4px rgb(0, 96, 221);
+button {
+  border: 2px solid rgb(110, 173, 255);
+  background-color: white;
+  color: rgb(0, 96, 221);
+  font-weight: bold;
+  font-size: large;
+  width: 45px;
+  height: 45px;
+  box-shadow: 4px 4px 4px rgb(0, 96, 221);
 }
 
-button:hover{
-    background-color: rgb(234, 242, 255);
+button:hover {
+  background-color: rgb(234, 242, 255);
 }
 
-button:active{
-    background-color: rgb(208, 228, 255);
+button:active {
+  background-color: rgb(208, 228, 255);
 }
 
-.direction{
-    width: 150px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+.direction {
+  width: 150px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
-#boutonMonter{
-    font-family: Wingdings;
-    margin:4px 40px;
+#boutonMonter {
+  font-family: Wingdings;
+  margin: 4px 40px;
 }
 
-#boutonGauche, #boutonDroite{
-    font-family: Wingdings;
-    margin: 0px 2px;
+#boutonGauche,
+#boutonDroite {
+  font-family: Wingdings;
+  margin: 0px 2px;
 }
 
-#boutonDescendre{
-    font-family: Wingdings;
-    margin: 0px 2px;
+#boutonDescendre {
+  font-family: Wingdings;
+  margin: 0px 2px;
 }
 
-.controlleurs > div > button{
-    padding: 8px;
+.controlleurs > div > button {
+  padding: 8px;
 }
 
-.menu{
-    display:flex;
-    flex-direction: column;
-    justify-content: center;
-    align-self: center;
-    margin: 0px 50px;
+.menu {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-self: center;
+  margin: 0px 50px;
 }
 
-#boutonSortir, #boutonRegles, #boutonOptions{
-    font-size: medium;
-    line-height: 100%;
-    padding: 0px;
-    width:100px;
-    height: 25px;
-    margin:3px;
+#boutonSortir,
+#boutonRegles,
+#boutonOptions {
+  font-size: medium;
+  line-height: 100%;
+  padding: 0px;
+  width: 100px;
+  height: 25px;
+  margin: 3px;
 }
 
 .progress {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-weight: bold;
-    flex-direction: row;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  flex-direction: row;
 }
 
 .progress > div {
-    margin: 2px 0px;
-    font-size: 1em;
-    font-weight: bold;
-    font-family: helvetica, sans-serif;
-    line-height: 100%;
-    text-align: center;
+  margin: 2px 0px;
+  font-size: 1em;
+  font-weight: bold;
+  font-family: helvetica, sans-serif;
+  line-height: 100%;
+  text-align: center;
 }
 
-.status{
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    font-weight: bold;
-    flex-direction: column;
-    color:  rgb(0, 96, 221);
+.status {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  font-weight: bold;
+  flex-direction: column;
+  color: rgb(0, 96, 221);
 }
 
-#score{
-    width: 140px;
-    font-weight: bold;
-    font-size: 1em;
-    font-family: helvetica, sans-serif;
-    margin: 8px 0px 0px 0px;
+#score {
+  width: 140px;
+  font-weight: bold;
+  font-size: 1em;
+  font-family: helvetica, sans-serif;
+  margin: 8px 0px 0px 0px;
 }
 
 #progress {
-    background: rgb(110, 173, 255);   
-    height: 15px;
-    width: 350px;
-    padding: 3px;
-    margin:  0px 5px 0px 5px;
-    box-shadow: 4px 4px 4px rgb(0, 96, 221);
+  background: rgb(110, 173, 255);
+  height: 15px;
+  width: 350px;
+  padding: 3px;
+  margin: 0px 5px 0px 5px;
+  box-shadow: 4px 4px 4px rgb(0, 96, 221);
 }
 
 #progressfill {
-    color: rgb(0, 96, 221);
-    font-size: small;
-    font-weight: bold;
-    font-family: sans-serif;
-    content: '';
-    padding-right: 0px;
-    display: block;
-    background-color: rgb(36, 255, 189);
-    width: 100%;
-    height: 100%;
+  color: rgb(0, 96, 221);
+  font-size: small;
+  font-weight: bold;
+  font-family: sans-serif;
+  content: "";
+  padding-right: 0px;
+  display: block;
+  background-color: rgb(36, 255, 189);
+  width: 100%;
+  height: 100%;
 }
 
-#overlayGameover, #overlayRegles, #overlayOptions {
-    position: fixed; /* Sit on top of the page content */
-    display: none; /* Hidden by default */
-    width: 100%; /* Full width (cover the whole page) */
-    height: 100%; /* Full height (cover the whole page) */
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(0,0,0,0.5); /* Black background with opacity */
-    z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
-    cursor: pointer; /* Add a pointer on hover */
-  }
+#overlayGameover,
+#overlayRegles,
+#overlayOptions {
+  position: fixed; /* Sit on top of the page content */
+  display: none; /* Hidden by default */
+  width: 100%; /* Full width (cover the whole page) */
+  height: 100%; /* Full height (cover the whole page) */
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5); /* Black background with opacity */
+  z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
+  cursor: pointer; /* Add a pointer on hover */
+}
 
-  #gameover{
-    display:flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin: 200px auto;
-    width: 400px;
-    height: 300px;
-    border: 2px solid rgb(0, 96, 221);
-    background-color: rgb(90, 145, 218);
-    box-shadow: 2px 2px 15px rgb(0, 96, 221);
-    font-size: large;
-    color: white;
-  }
+#gameover {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 200px auto;
+  width: 400px;
+  height: 300px;
+  border: 2px solid rgb(0, 96, 221);
+  background-color: rgb(90, 145, 218);
+  box-shadow: 2px 2px 15px rgb(0, 96, 221);
+  font-size: large;
+  color: white;
+}
 
-  #regles{
-    display:flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin: 200px auto;
-    width: 700px;
-    height: 500px;
-    border: 2px solid rgb(0, 96, 221);
-    background-color: rgb(90, 145, 218);
-    box-shadow: 2px 2px 15px rgb(0, 96, 221);
-    font-size: large;
-    color: white;
-  }
+#regles {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 200px auto;
+  width: 700px;
+  height: 500px;
+  border: 2px solid rgb(0, 96, 221);
+  background-color: rgb(90, 145, 218);
+  box-shadow: 2px 2px 15px rgb(0, 96, 221);
+  font-size: large;
+  color: white;
+}
 
-  #regles > ul > *{
-    font-family: Helvetica, sans-serif;
-    text-shadow: 1px 1px 3px rgb(42, 47, 53);
-    font-size: 0.9em;
-    padding:3px;
-  }
+#regles > ul > * {
+  font-family: Helvetica, sans-serif;
+  text-shadow: 1px 1px 3px rgb(42, 47, 53);
+  font-size: 0.9em;
+  padding: 3px;
+}
 
-  #options{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin: 200px auto;
-    width: 400px;
-    height: 300px;
-    border: 2px solid rgb(0, 96, 221);
-    background-color: rgb(90, 145, 218);
-    box-shadow: 2px 2px 15px rgb(0, 96, 221);
-    font-size: large;
-    color: white;
-  }
+#options {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 200px auto;
+  width: 400px;
+  height: 300px;
+  border: 2px solid rgb(0, 96, 221);
+  background-color: rgb(90, 145, 218);
+  box-shadow: 2px 2px 15px rgb(0, 96, 221);
+  font-size: large;
+  color: white;
+}
 
-  #options > div {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start;
-    padding: 5px;
-  }
+#options > div {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding: 5px;
+}
 
-  #options > div > div{
-    padding: 8px;
-  }
+#options > div > div {
+  padding: 8px;
+}
 
-  #gameover > *,   #regles > *,   #options > *{
-    font-family: Helvetica, sans-serif;
-    text-shadow: 1px 1px 3px rgb(42, 47, 53);
-    margin: 10px;
-  }
+#gameover > *,
+#regles > *,
+#options > * {
+  font-family: Helvetica, sans-serif;
+  text-shadow: 1px 1px 3px rgb(42, 47, 53);
+  margin: 10px;
+}
 
-  .overlayClosing {
-    background-color: rgb(0, 96, 221);
-    padding: 5px 0px;
-    border: 2px solid rgb(0, 64, 146);
-    width: 115px;
-    text-align: center;
-    font-size: large;
-    color: white;
-  }
+.overlayClosing {
+  background-color: rgb(0, 96, 221);
+  padding: 5px 0px;
+  border: 2px solid rgb(0, 64, 146);
+  width: 115px;
+  text-align: center;
+  font-size: large;
+  color: white;
+}
 
-  .overlayClosing:hover{
-    background-color: rgb(0, 77, 177);
-    width: 120px;
-    box-shadow: 0px 0px 10px rgb(3, 97, 221);
-  }
-  
+.overlayClosing:hover {
+  background-color: rgb(0, 77, 177);
+  width: 120px;
+  box-shadow: 0px 0px 10px rgb(3, 97, 221);
+}
