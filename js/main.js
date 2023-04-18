@@ -42,7 +42,7 @@ document
   .addEventListener("click", (e) => activerOverlay("overlayOptions"));
 document
   .getElementById("boutonSortir")
-  .addEventListener("click", (e) => redemarrer);
+  .addEventListener("click", (e) => close());
 
 function RemplirTableau() {
   for (let ran = 0; ran < rangees; ran++) {
@@ -66,7 +66,9 @@ function RemplirTableau() {
       }
     }
   }
-  ajouterDiamants();
+  if (activerDiamants == true) {
+    ajouterDiamants();
+  }
 }
 
 function ActualiserDonjon() {
@@ -218,6 +220,13 @@ function activerOverlay(overlayName) {
     document.getElementById("overlayRegles").style.display = "block";
   }
   if (overlayName == "overlayOptions") {
+    if (activerDiamants == true) {
+      document.getElementById("checkboxDiamants").checked = true;
+    }
+    if (activerObstacles == true) {
+      document.getElementById("checkboxRoches").checked = true;
+    }
+
     document.getElementById("overlayOptions").style.display = "block";
   }
   if (overlayName == "overlayGameover") {
@@ -232,6 +241,25 @@ function deactiverOverlay() {
   if (energie <= 0) {
     redemarrer();
   }
+}
+
+function deactiverOverlayAndReset() {
+  document.getElementById("overlayRegles").style.display = "none";
+  document.getElementById("overlayOptions").style.display = "none";
+  document.getElementById("overlayGameover").style.display = "none";
+
+  if (document.getElementById("checkboxDiamants").checked) {
+    activerDiamants = true;
+  } else {
+    activerDiamants = false;
+  }
+  if (document.getElementById("checkboxRoches").checked) {
+    activerObstacles = true;
+  } else {
+    activerObstacles = false;
+  }
+
+  redemarrer();
 }
 
 function redemarrer() {

@@ -71,24 +71,38 @@
         <h1>Options</h1>
         <div>
           <div>
-            <input type="checkbox" id="check1" name="check1" value="Bike" />
+            <input
+              type="checkbox"
+              id="checkboxDiamants"
+              name="check1"
+              value="Bike"
+            />
             <label for="vehicle1">Activer les diamants</label>
           </div>
           <div>
-            <input type="checkbox" id="check2" name="check2" value="Car" />
+            <input
+              type="checkbox"
+              id="checkboxRoches"
+              name="check2"
+              value="Car"
+            />
             <label for="vehicle2">Activer les roches gris foncé</label>
           </div>
-          <div>
-            <input type="checkbox" id="check2" name="check2" value="Boat" />
-            <label for="vehicle3">Blank</label>
-          </div>
         </div>
-        <input
-          type="submit"
-          class="overlayClosing"
-          value="Sauvegarder"
-          onclick="deactiverOverlay()"
-        />
+        <div id="SaveAndClose">
+          <input
+            type="submit"
+            class="overlayCloseAndReset"
+            value="Sauvegarder"
+            onclick="deactiverOverlayAndReset()"
+          />
+          <input
+            type="submit"
+            class="overlayClosing"
+            value="Fermer"
+            onclick="deactiverOverlay()"
+          />
+        </div>
       </div>
     </div>
     <div id="overlayGameover">
